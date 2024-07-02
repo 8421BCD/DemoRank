@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## DemoRank
 
 ### 1. Introduction
@@ -84,7 +83,3 @@ If you find this repository useful, please consider giving a star ⭐ and citati
   year={2024}
 }
 ```
-=======
-# DemoRank
-The codes will be released soon...
->>>>>>> 91b06eafbc68b24aae8d487a7659952bc6b64323

@@ -67,7 +67,7 @@ bash train_reranker.sh
 
 #### 3 Inference
 
-Run the following script to evaluate the trained DRetriever and DReranker. Remember to change parameter `model_name_or_path`. Note that the folder `ranking_trunc_queries_docs` used in run_kshot.py is not included in the repository due to file size issue. We provide it at `https://drive.google.com/drive/folders/1IEpFtRpAN3jflj1MXBHgNO3Be29TR2XN?usp=sharing`.
+Run the following script to evaluate the trained DRetriever and DReranker. Remember to change parameter `model_name_or_path`.
 
 ```bash
 bash run_kshot.sh

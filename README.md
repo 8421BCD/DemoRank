@@ -1,6 +1,6 @@
 ## DemoRank
 
-### 1. Introduction
+### 📋 Introduction
 
 This repository contains the code for our paper [DemoRank: Selecting Effective Demonstrations for Large Language Models in Ranking Task](xxx). 
 
@@ -8,20 +8,26 @@ Recently, there has been increasing interest in applying large language models (
 
 ![image-20240621121733997](https://8421bcd.oss-cn-beijing.aliyuncs.com/img/image-20240621121733997.png)
 
-### 2. How to reproduce the experimental results?
+### 📝 How to reproduce the experimental results?
 
-> Main packages
->
-> - pytorch 2.1.0
-> - pyserini 0.20.0
-> - transformers 4.31.0
-> - accelerate 0.24.1
-> - deepspeed 0.8.3
-> - faiss-gpu
+#### Prerequisites
 
-#### 2.1 Demonstration Retriever (DRetriever)
+##### 📦 Main packages
 
-**2.1.1 Get Training Data**
+- pytorch 2.1.0
+- pyserini 0.20.0
+- transformers 4.31.0
+- accelerate 0.24.1
+- deepspeed 0.8.3
+- faiss-gpu
+
+##### 📥 Download Data
+
+Please download the required data for code running to the root directory of the project (`demorank/`). The download link is: [Google Drive](https://drive.google.com/drive/folders/1oPOCMIq491pUrnHW2Ivw793ZUfZtv_3R?usp=sharing).
+
+#### 1 Demonstration Retriever (DRetriever)
+
+**1.1 Get Training Data**
 
 We use Flan-T5-XL to score each demonstration candidate. Please run the following command:
 
@@ -31,7 +37,7 @@ bash llm_score.sh
 
 Remember to replace the parameter `model_name_or_path` with your LLM's path. The code defaults to handling the MS MARCO dataset. Please modify the dataset parameters if you are processing other datasets.
 
-**2.1.2 Model Training**
+**1.2 Model Training**
 
 After get the training data, please run the following script to trained the DRetriever and build the index based on trained models. Ensure that your current path is: `demorank/train/src`. Remember to change parameter `train_data_shards_file` and `model_name_or_path` in the script to your own path.
 
@@ -41,9 +47,9 @@ bash train_retriever.sh
 
  After model training, the script will automatically execute the indexing script based on the model that was just saved. 
 
-#### 2.2 Demonstration Reranker (DReranker)
+#### 2 Demonstration Reranker (DReranker)
 
-**2.2.1 Get Training Data**
+**2.1 Get Training Data**
 
 We use Flan-T5-XL to score demonstration candidates retrieved by DRetriever in a dependency-aware manner . Please run the following command:
 
@@ -51,7 +57,7 @@ We use Flan-T5-XL to score demonstration candidates retrieved by DRetriever in a
 bash llm_score_dependency_aware_rerank.sh
 ```
 
-**2.2.2 Model Training**
+**2.2 Model Training**
 
 After get the training data, please run the following script to trained the DReranker. Ensure that your current path is: `demorank/train/src`. Remember to change parameter `train_data_shards_file` and `model_name_or_path` in the script to your own path.
 
@@ -59,19 +65,19 @@ After get the training data, please run the following script to trained the DRer
 bash train_reranker.sh
 ```
 
-#### 2.3 Inference
+#### 3 Inference
 
-Run the following script to evaluate the trained DRetriever and DReranker. Remember to change parameter `model_name_or_path`. Note that the folder `ranking_trunc_queries_docs` used in run_kshot.py is not included in the repository due to file size limit. We provide it at `xxx`
+Run the following script to evaluate the trained DRetriever and DReranker. Remember to change parameter `model_name_or_path`. Note that the folder `ranking_trunc_queries_docs` used in run_kshot.py is not included in the repository due to file size issue. We provide it at `https://drive.google.com/drive/folders/1IEpFtRpAN3jflj1MXBHgNO3Be29TR2XN?usp=sharing`.
 
 ```bash
 bash run_kshot.sh
 ```
 
-### Contact
+### 📞 Contact
 
 If you have any question or suggestion related to this project, feel free to open an issue or pull request. You also can email Wenhan Liu ([lwh@ruc.edu.cn](mailto:lwh@ruc.edu.cn)).
 
-### Citation
+### ✨ Citation
 
 If you find this repository useful, please consider giving a star ⭐ and citation
 

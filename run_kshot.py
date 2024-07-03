@@ -447,13 +447,13 @@ def main():
     print('loading auxiliary data')
     with open(demon_args.id_demon_path, 'r') as f: 
         id_demon = json.load(f)
-    id_query_path = f'../../data/ranking_trunc_queries_docs/id_query_{args.dataset}.json'
+    id_query_path = f'ranking_trunc_queries_docs/id_query_{args.dataset}.json'
     with open(id_query_path, 'r') as f: 
         id_query = json.load(f)
     if args.dataset in ['dl19', 'dl20']:
-        id_doc_path = f'../../data/ranking_trunc_queries_docs/id_doc_msmarco.json'
+        id_doc_path = f'ranking_trunc_queries_docs/id_doc_msmarco.json'
     else:
-        id_doc_path = f'../../data/ranking_trunc_queries_docs/id_doc_{args.dataset}.json'
+        id_doc_path = f'ranking_trunc_queries_docs/id_doc_{args.dataset}.json'
     with open(id_doc_path, 'r') as f:
         id_doc = json.load(f)
     if demon_args.demonstration_type != 'none':

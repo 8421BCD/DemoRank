@@ -1,4 +1,4 @@
-## DemoRank
+## DemoRank: Selecting Effective Demonstrations for Large Language Models in Ranking Task
 
 ### 📋 Introduction
 

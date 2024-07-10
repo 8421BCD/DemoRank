@@ -39,7 +39,7 @@ Remember to replace the parameter `model_name_or_path` with your LLM's path. The
 
 **1.2 Model Training**
 
-After get the training data, please run the following script to trained the DRetriever and build the index based on trained models. Ensure that your current path is: `demorank/train/src`. Remember to change parameter `train_data_shards_file` and `model_name_or_path` in the script to your own path.
+After get the training data, please run the following script to trained the DRetriever and build the index based on trained models. Ensure that your current path is: `train/src`. Remember to change parameter `train_data_shards_file` and `model_name_or_path` in the script to your own path.
 
 ```bash
 bash train_retriever.sh
@@ -59,7 +59,7 @@ bash llm_score_dependency_aware_rerank.sh
 
 **2.2 Model Training**
 
-After get the training data, please run the following script to trained the DReranker. Ensure that your current path is: `demorank/train/src`. Remember to change parameter `train_data_shards_file` and `model_name_or_path` in the script to your own path.
+After get the training data, please run the following script to trained the DReranker. Ensure that your current path is: `train/src`. Remember to change parameter `train_data_shards_file` and `model_name_or_path` in the script to your own path.
 
 ```bash
 bash train_reranker.sh

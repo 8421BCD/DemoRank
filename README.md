@@ -23,7 +23,7 @@ Recently, there has been increasing interest in applying large language models (
 
 ##### 📥 Download Data
 
-Please download the required data for code running to the root directory of the project (`demorank/`). The download link is: [Google Drive](https://drive.google.com/drive/folders/1oPOCMIq491pUrnHW2Ivw793ZUfZtv_3R?usp=sharing).
+Please download the required data for code running to the root directory of the project. The download link is: [Google Drive](https://drive.google.com/drive/folders/1oPOCMIq491pUrnHW2Ivw793ZUfZtv_3R?usp=sharing).
 
 #### 1 Demonstration Retriever (DRetriever)
 
